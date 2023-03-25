@@ -66,7 +66,7 @@ button:active {
 }
         </style>
     </head>
-    <body>
+    <body oncontextmenu="click78(); return false;">
         <div class="centerDiv">
             <img src="https://media.tenor.com/PEDzvMlrdi0AAAAC/fire.gif" id="fire56" style="display:none;" class="center">
             <h1 id="t78" class="center">7-8</h1>
@@ -86,14 +86,16 @@ function getRandom(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-let clicks = 0;
-document.addEventListener("click", function() {
+function click78() {
     ++clicks;
     if (clicks >= getRandom(7, 8)) {
         t78.style.color = getRandomColor();
         clicks = 0;
     }
-});
+}
+
+let clicks = 0;
+document.addEventListener("click", click78);
 
 let fire = document.getElementById("fire56");
 let button56 = document.getElementById("button56");
