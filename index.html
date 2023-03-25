@@ -3,8 +3,21 @@
     <head>
         <title>7-8</title>
         <style>
+html, body, .centerDiv {
+    height: 99%;
+}
+
+.centerDiv {
+    display: flex;
+    justify-content: center;
+}
+
+.center {
+    align-self: center;
+}
+
 h1 {
-    font-family: "Proxima Nova";
+    font-family: "Proxima Nova";
     font-style: italic;
     font-size: 92px;
     user-select: none;
@@ -14,10 +27,51 @@ h1 {
     transform: translateX(-50%) translateY(-50%);
     margin: 0 0 0 0;
 }
+
+button {
+    --c: #fff; /* text color */
+
+    position: absolute;
+    top: 75%;
+    left: 42%;
+  
+    background: linear-gradient(90deg, #0000 33%, #fff5, #0000 67%) var(--_p,100%)/300% no-repeat,
+    #E97F02; /* background color */
+    color: #0000;
+    border: none;
+    transform: perspective(500px) rotateY(calc(20deg*var(--_i,-1)));
+    text-shadow: 
+        calc(var(--_i,-1)* 0.08em) -.01em 0   var(--c),
+        calc(var(--_i,-1)*-0.08em)  .01em 2px #0004;
+    outline-offset: .1em;
+    transition: 0.3s;
+
+    font-family: system-ui, sans-serif;
+    font-weight:bold;
+    font-size: 4rem;
+    margin: 0;
+    cursor: pointer;
+    padding: .1em .3em;
+}
+button:hover,
+button:focus-visible {
+    --_p: 0%;
+    --_i: 1;
+}
+button:active {
+    text-shadow: none;
+    color: var(--c);
+    box-shadow: inset 0 0 9e9q #0005;
+    transition: 0s;
+}
         </style>
     </head>
     <body>
-        <h1 id="t78">7-8</h1>
+        <div class="centerDiv">
+            <img src="https://media.tenor.com/PEDzvMlrdi0AAAAC/fire.gif" id="fire56" style="display:none;" class="center">
+            <h1 id="t78" class="center">7-8</h1>
+        </div>
+        <button id="button56">5-6 говно</button>
         <script>
 function getRandomColor() {
     let letters = '0123456789ABCDEF';
@@ -38,6 +92,19 @@ document.addEventListener("click", function() {
     if (clicks >= getRandom(7, 8)) {
         t78.style.color = getRandomColor();
         clicks = 0;
+    }
+});
+
+let fire = document.getElementById("fire56");
+let button56 = document.getElementById("button56");
+let audioPlayed = false;
+
+button56.addEventListener("click", function() {
+    fire.style.display = "";
+    if (!audioPlayed) {
+        var audio = new Audio('https://unia909.github.io/7-8/gangnam_style_phonk.mp3');
+        audio.play();
+        audioPlayed = true;
     }
 });
         </script>
