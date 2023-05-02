@@ -3,6 +3,10 @@
     <head>
         <title>7-8</title>
         <style>
+body {
+    background-color: #000;
+}
+            
 html, body, .centerDiv {
     height: 99%;
 }
@@ -68,7 +72,7 @@ button:active {
     </head>
     <body oncontextmenu="click78(); return false;">
         <div class="centerDiv">
-            <img src="https://media.tenor.com/PEDzvMlrdi0AAAAC/fire.gif" id="fire56" style="display:none;" class="center">
+            <img src="https://i.gifer.com/fxVE.gif" id="super_circle" style="display:none;" class="center">
             <h1 id="t78" class="center">7-8</h1>
         </div>
         <button id="button56">5-6 говно</button>
@@ -97,12 +101,12 @@ function click78() {
 let clicks = 0;
 document.addEventListener("click", click78);
 
-let fire = document.getElementById("fire56");
+let circle = document.getElementById("super_circle");
 let button56 = document.getElementById("button56");
 let audioPlayed = false;
 
 button56.addEventListener("click", function() {
-    fire.style.display = "";
+    circle.style.display = "";
     if (!audioPlayed) {
         var audio = new Audio('https://unia909.github.io/7-8/Tincup_Lost.mp3');
         audio.play();
